@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-// const routes = require('./routes')
 
 const server = express()
 
@@ -11,5 +10,4 @@ server.get('/', (req, res) => {
     res.send('Hello World')
 })
 
-// server.use(routes);
 server.listen(3333)
