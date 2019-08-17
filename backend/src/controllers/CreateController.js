@@ -1,6 +1,8 @@
 const AdmController = require('../models/Adm');
 const DoormanController = require('../models/Doorman');
 const HouseController = require('../models/House');
+const OwnerController = require('../models/Owner');
+
 
 module.exports = {
     async createAdm(req, res){
@@ -55,6 +57,27 @@ module.exports = {
         });
 
         return res.json(houseCreated);
+    },
+
+    async createOwner(req, res){
+        const {name, phone = undefined, email = undefined, houseNumber, houseBlock, user } = req.body;
+
+        const ownerExists = await OwnerController.findOne({ user });
+        if(ownerExists){
+            return res.json({ message: "Morador já cadastrado. " });
+        }
+
+        const ownerCreated = await OwnerController.create({
+            name,
+            phone,
+            email,
+            houseNumber,
+            houseBlock,
+            user
+        });
+
+        return res.json(ownerCreated);
+
     }
 
 }

@@ -15,7 +15,10 @@ const OwnerSchema = new Schema({
         type: Number,
         required: true,
     },
-    veichlesPlate: String,
+    veichles: [{
+        plate: String,
+        id: Schema.Types.ObjectId,
+    }],
     user: {
         type: String,
         required: true,
