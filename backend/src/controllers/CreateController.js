@@ -2,6 +2,7 @@ const AdmController = require('../models/Adm');
 const DoormanController = require('../models/Doorman');
 const HouseController = require('../models/House');
 const OwnerController = require('../models/Owner');
+const VeichlesController = require('../models/Veichles');
 
 
 module.exports = {
@@ -43,7 +44,7 @@ module.exports = {
     },
 
     async createHouse(req, res){
-        const { number, block, ownerID = undefined } = req.body;
+        const { number, block, ownerID = undefined, inUse, forSell } = req.body;
 
         const houseExists = await HouseController.findOne({ number, block });
         if(houseExists){
@@ -53,7 +54,9 @@ module.exports = {
         const houseCreated = await HouseController.create({
             number,
             block,
-            ownerID
+            ownerID,
+            inUse,
+            forSell
         });
 
         return res.json(houseCreated);
@@ -78,6 +81,17 @@ module.exports = {
 
         return res.json(ownerCreated);
 
-    }
+    },
+
+    async createVeichles(req, res){
+        const { plaque, houseBlock, houseNumber, status = true } = req.body;
+
+        const veichleCreated = await VeichlesController.create({
+            plaque, houseBlock, houseNumber, status
+        });
+
+        return res.json(veichleCreated);
+
+    },
 
 }

@@ -10,6 +10,16 @@ const HouseSchema = new Schema({
         required: true
     },
     ownerID: Schema.Types.ObjectId,
+    inUse: {
+        type: Boolean,
+        required: true,
+        default: true
+    },
+    forSell: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
 });
 
 module.exports = model('House', HouseSchema);

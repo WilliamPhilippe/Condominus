@@ -16,7 +16,7 @@ const OwnerSchema = new Schema({
         required: true,
     },
     veichles: [{
-        plate: String,
+        plaque: String,
         id: Schema.Types.ObjectId,
     }],
     user: {

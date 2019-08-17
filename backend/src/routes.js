@@ -14,6 +14,11 @@ routes.post('/adm/create/adm', CreateController.createDoorman);
 routes.post('/adm/create/doorman', CreateController.createAdm);
 routes.post('/adm/create/house', CreateController.createHouse);
 routes.post('/*/create/owner', CreateController.createOwner);
+routes.post('/*/create/veichles', CreateController.createVeichles);
+
+routes.get('/verifyVeichle', )
+
+
 
 
 module.exports = routes;
