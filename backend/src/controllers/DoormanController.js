@@ -1,7 +1,16 @@
+const DoormanControlller = require('../models/Doorman');
+
 module.exports = {
 
-    access(req, res) {
-        return res.json({ ok: "Doorman Access Controler True" })
+    async access(req, res) {
+        const user = await DoormanControlller.findOne({ user: req.headers.user });
+
+        if(user){
+            let userID = user._id;
+            return res.json({ message: 'Found', id: userID }); 
+        }
+        else res.status(400).json({ message: "not found" });
+        
     }
 
 }
