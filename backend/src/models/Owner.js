@@ -7,15 +7,15 @@ const OwnerSchema = new Schema({
     },
     phone: String,
     email: String,
-    houseID: {
-        type: Schema.Types.ObjectId,
+    houseNumber: {
+        type: Number,
         required: true,
-        ref: 'House',
     },
-    veiculosID: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Veichles',
-    }],
+    houseBlock:{
+        type: Number,
+        required: true,
+    },
+    veichlesPlate: String,
     user: {
         type: String,
         required: true,
