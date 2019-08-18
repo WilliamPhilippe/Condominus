@@ -86,6 +86,9 @@ module.exports = {
     async createVeichles(req, res){
         const { plaque, houseBlock, houseNumber, status = true } = req.body;
 
+        const veichleExists = await VeichlesController.findOne({plaque});
+        if(veichleExists) return res.json({ message: 'Veichle exists '});
+
         const veichleCreated = await VeichlesController.create({
             plaque, houseBlock, houseNumber, status
         });

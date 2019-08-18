@@ -5,6 +5,7 @@ const CreateController = require('./controllers/CreateController');
 const DoormanController = require('./controllers/DoormanController');
 const AdmController = require('./controllers/AdmController');
 const OwnerController = require('./controllers/OwnerController');
+const VeichlesController = require('./controllers/VeichlesController');
 
 routes.post('/doorman/access', DoormanController.access);
 routes.post('/adm/access', AdmController.access);
@@ -16,8 +17,7 @@ routes.post('/adm/create/house', CreateController.createHouse);
 routes.post('/*/create/owner', CreateController.createOwner);
 routes.post('/*/create/veichles', CreateController.createVeichles);
 
-routes.get('/verifyVeichle', )
-
+routes.post('/verifyVeichle', VeichlesController.verifyVeichle);
 
 
 
