@@ -29,8 +29,12 @@ routes.get('/listOwners', OwnerController.listOwner);
 routes.get('/listHouses', HouseController.listHouses);
 routes.get('/listDoormans', DoormanController.listDoormans);
 
-// routes.post('/edit/house');
-// routes.post('/edit/doorman');
+routes.get('/getOwnerByUser/:user', OwnerController.getOwnerByUser);
+routes.get('/getOwnerById/:id', OwnerController.getById);
+routes.get('/getDoormanById/:id', DoormanController.getById);
+routes.get('/getHouseById/:id', HouseController.getById);
+
+
 routes.post('/edit/owner', OwnerController.editOwner);
 routes.post('/edit/doorman', DoormanController.editDoorman);
 routes.post('/edit/house', HouseController.editHouse);

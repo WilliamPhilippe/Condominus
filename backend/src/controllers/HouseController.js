@@ -18,5 +18,11 @@ module.exports = {
         const response = await HouseController.findByIdAndUpdate(req.headers._id, req.body, {new: true});
         console.log('editHouse');
         return res.json(response);
-    }
+    },
+
+    async getById (req, res){
+        const user = await HouseController.findById(req.params.id);
+
+        return res.json(user);
+    },
 }

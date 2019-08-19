@@ -30,5 +30,12 @@ module.exports = {
         const response = await DoormanControlller.findByIdAndUpdate(req.headers._id, req.body, {new: true});
         console.log('editDoorman');
         return res.json(response);
-    }
+    },
+
+    async getById (req, res){
+        const user = await DoormanControlller.findById(req.params.id);
+
+        return res.json(user);
+    },
+
 }

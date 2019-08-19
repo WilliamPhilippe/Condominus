@@ -9,6 +9,9 @@ import doormanPainel from "./componets/doorman/painel/doormanPainel";
 import cadastrarOwner from './componets/cadastrar/owner/cadastrarOwner';
 import cadastrarHouse from './componets/cadastrar/house/cadastrarHouse';
 import cadastrarDoorman from './componets/cadastrar/doorman/cadastrarDoorman'
+import editOwner from './componets/edit/owner/editOwner';
+import editHouse from './componets/edit/house/editHouse';
+import editDoorman from './componets/edit/doorman/editDoorman';
 
 
 export default function Routes(){
@@ -21,7 +24,12 @@ export default function Routes(){
             <Route path="/doorman/:_id/:user"  component={doormanPainel} />
             <Route path="/cadastrarHouse/:_id/:user" component={cadastrarHouse}/>
             <Route path="/cadastrarOwner/:_id/:user" component={cadastrarOwner} />
-            <Route path="/cadastrarDoorman/:_id/:user" component={cadastrarDoorman} />      
+            <Route path="/cadastrarDoorman/:_id/:user" component={cadastrarDoorman} />
+
+            <Route path="/edit/owner/:_id/:user" component={editOwner} />   
+            <Route path="/edit/house/:_id/:user" component={editHouse} />
+            <Route path="/edit/doorman/:_id/:user" component={editDoorman} />      
+
         </BrowserRouter>
     );
 }

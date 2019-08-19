@@ -2,6 +2,12 @@ const OwnerController = require('../models/Owner');
 
 module.exports = {
 
+    async getById (req, res){
+        const user = await OwnerController.findById(req.params.id);
+
+        return res.json(user);
+    },
+
     async access (req, res) {
         const user = await OwnerController.findOne({ user: req.body.user });
 
@@ -31,6 +37,12 @@ module.exports = {
         console.log('editOwner');
 
         return res.json(edited);
+    },
+
+    async getOwnerByUser (req, res){
+        const owner = await OwnerController.findOne({ user: req.params.user });
+        console.log('getOwnerByUser');
+        return res.json(owner);
     }
 
 }

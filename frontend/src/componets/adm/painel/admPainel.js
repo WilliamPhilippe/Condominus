@@ -77,7 +77,7 @@ export default function AdmPainel({ history, match }){
                                 <h1>{owner.name}</h1>
                                 <h2>Casa {owner.houseNumber} Bloco {owner.houseBlock}  |  {owner.user}</h2>
                                 <div id="buttons">
-                                    <button>editar</button>
+                                    <button onClick={() => history.push(`/edit/owner/${owner._id}/${user}`)}>editar</button>
                                     <button onClick={() => handleDeliteOwner(owner._id)}>excluir</button>                                
                                 </div>
                             </li>
@@ -88,8 +88,7 @@ export default function AdmPainel({ history, match }){
                             <li key={house._id}>
                             <h1>Casa {house.number} Bloco {house.block}</h1>
                             <div id="buttons">
-                                <button>detalhes</button>
-                                <button>editar</button>
+                                <button onClick={() => history.push(`/edit/house/${house._id}/${user}`)}>editar</button>
                                 <button onClick={() => handleDeliteHouse(house._id)}>excluir</button>                                
                             </div>
                         </li>
@@ -101,7 +100,7 @@ export default function AdmPainel({ history, match }){
                                 <h1>{doorman.name}</h1>
                                 <h2>{doorman.user}</h2>
                                 <div id="buttons">
-                                    <button>editar</button>
+                                    <button onClick={() => history.push(`/edit/doorman/${doorman._id}/${user}`)}>editar</button>
                                     <button onClick={() => handleDeliteDoorman(doorman._id)}>excluir</button>                                
                                 </div>
                             </li>
