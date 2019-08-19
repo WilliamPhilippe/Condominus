@@ -8,7 +8,7 @@ module.exports = {
         if(veichleExists){
             return res.json({ message: 'found', veichleExists });
         }
-        else return res.status(400).json({ message: 'not found'});
+        else return res.json({ newStatus: 400 });
     }
 
 }

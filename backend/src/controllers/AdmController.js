@@ -3,13 +3,13 @@ const AdmController = require('../models/Adm');
 module.exports = {
 
     async access(req, res){
-        const user = await AdmController.findOne({ user: req.headers.user });
-
+        const user = await AdmController.findOne({ user: req.body.user });
+        console.log(user);
         if(user){
             let userID = user._id;
-            return res.json({ message: 'found', id: userID });
+            return res.json({ message: 'found', user });
         }
-        else return res.status(400).json({ message: "not found" });
+        else return res.json({ newStatus: 400 });
     },
 
 }
