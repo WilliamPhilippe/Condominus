@@ -46,8 +46,9 @@ module.exports = {
     async createHouse(req, res){
         const { number, block, ownerID = undefined, inUse, forSell } = req.body;
 
-        const houseExists = await HouseController.findOne({ number, block });
+        const houseExists = await HouseController.findOneAndUpdate({ number, block }, req.body);
         if(houseExists){
+            
             return res.json({message: "Casa já cadastrada. "});
         }
 
@@ -67,8 +68,10 @@ module.exports = {
 
         const ownerExists = await OwnerController.findOne({ user });
         if(ownerExists){
+
             return res.json({ message: "Morador já cadastrado. " });
         }
+
 
         const ownerCreated = await OwnerController.create({
             name,
@@ -79,6 +82,7 @@ module.exports = {
             user
         });
 
+        console.log(ownerCreated._id);
         return res.json(ownerCreated);
 
     },

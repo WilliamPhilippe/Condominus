@@ -11,6 +11,26 @@ module.exports = {
         }
         else res.json({ newStatus: 400 });
         
+    },
+
+    async listOwner (req, res){
+        const owners = await OwnerController.find();
+        console.log('listowner');
+        return res.json(owners);
+    },
+
+    async deliteOwner(req, res){
+        await OwnerController.findByIdAndDelete(req.body.id);
+        console.log('deliteOwner');
+        return res.json();
+    },
+
+    async editOwner (req, res){
+        const edited = await OwnerController.findByIdAndUpdate(req.headers.user, req.body, {new: true});
+
+        console.log('editOwner');
+
+        return res.json(edited);
     }
 
 }
