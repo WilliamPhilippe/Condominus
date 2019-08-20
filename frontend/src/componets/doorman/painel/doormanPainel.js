@@ -96,6 +96,12 @@ export default function DoormanPainel({ history, match }){
         }
     }
 
+    const [ flagAll, setFlagAll ] = useState(true)
+
+    function settingforsell(item){
+        return flagAll || item.forSell;
+    }
+
     return (
         <div>
             <div id="userAdm">
@@ -129,7 +135,7 @@ export default function DoormanPainel({ history, match }){
                         ))}
                     </ul>
                     <ul id="casas">
-                        {houses.map(house => (
+                        {houses.filter(settingforsell).map(house => (
                             <li key={house._id}>
                                 <h1>Casa {house.number} Bloco {house.block}</h1>
                                 <div id="buttons">
@@ -149,8 +155,8 @@ export default function DoormanPainel({ history, match }){
                     </div>
                     <div id="buttonsCasasDor">
                         <button id="houses" onClick={() => history.push(`/cadastrarHouse/${_id}/${user}`)}>Cadastrar</button>                        
-                        <button id="houses" >À venda</button>
-                        <button id="houses" >Todas</button>
+                        <button id="houses" onClick={() => setFlagAll(false)}>À venda</button>
+                        <button id="houses" onClick={() => setFlagAll(true)}>Todas</button>
                     </div>
                 </div>
             </div>
