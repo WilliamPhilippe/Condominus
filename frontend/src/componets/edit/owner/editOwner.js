@@ -42,7 +42,8 @@ export default function EditOwner( {history, match} ){
             user: username
         }, { headers: { user: ownerID } });
 
-        history.push(`/adm/id/${user}`);
+        history.go(-1)
+        
 
     }
 
@@ -59,7 +60,7 @@ export default function EditOwner( {history, match} ){
                 <input type="text" value={houseBlock} onChange={e => setHouseBlock(e.target.value)} placeholder="Bloco:"/>
                 <div><button type="submit">Salvar</button></div>
             </form>
-            <button type="button" id="voltarEditOwner" onClick={() => history.push(`/adm/id/${user}`) }>voltar</button>
+            <button type="button" id="voltarEditOwner" onClick={() => history.go(-1) }>voltar</button>
         </div>
     )
 }

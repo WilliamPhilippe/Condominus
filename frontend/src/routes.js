@@ -12,6 +12,8 @@ import cadastrarDoorman from './componets/cadastrar/doorman/cadastrarDoorman'
 import editOwner from './componets/edit/owner/editOwner';
 import editHouse from './componets/edit/house/editHouse';
 import editDoorman from './componets/edit/doorman/editDoorman';
+import editVeichle from './componets/edit/veichle/editVeichle';
+import createVeichle from './componets/cadastrar/veichle/createVeichle';
 
 
 export default function Routes(){
@@ -25,10 +27,14 @@ export default function Routes(){
             <Route path="/cadastrarHouse/:_id/:user" component={cadastrarHouse}/>
             <Route path="/cadastrarOwner/:_id/:user" component={cadastrarOwner} />
             <Route path="/cadastrarDoorman/:_id/:user" component={cadastrarDoorman} />
+            <Route path="/create/veichle/:plaque/:user" component={createVeichle} />
 
-            <Route path="/edit/owner/:_id/:user" component={editOwner} />   
-            <Route path="/edit/house/:_id/:user" component={editHouse} />
-            <Route path="/edit/doorman/:_id/:user" component={editDoorman} />      
+
+            <Route path="/edit/owner/:_id/:user/" component={editOwner} />   
+            <Route path="/edit/house/:_id/:user/" component={editHouse} />
+            <Route path="/edit/doorman/:_id/:user/" component={editDoorman} />      
+            <Route path="/edit/veichle/:plaque/:user/" component={editVeichle} />
+
 
         </BrowserRouter>
     );

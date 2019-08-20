@@ -18,7 +18,8 @@ export default function CadastrarOwner({history, match}){
             number,
             block,
         })
-        history.push(`/adm/${_id}/${user}`);
+
+        history.go(-1)
     }
 
     return (
@@ -37,7 +38,7 @@ export default function CadastrarOwner({history, match}){
 
                 <div><button type="submit">Salvar</button></div>
             </form>
-            <button type="button" id="voltar" onClick={() => history.push(`/adm/${_id}/${user}`) }>voltar</button>
+            <button type="button" id="voltar" onClick={() => history.go(-1) }>voltar</button>
         </div>
     );
 

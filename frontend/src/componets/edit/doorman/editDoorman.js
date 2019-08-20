@@ -1,6 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import api from '../../../services/api';
 
+import './editarDoorman.css';
+
 export default function EditDoorman( { history, match } ){
 
     const { _id, user } = match.params;
@@ -34,7 +36,7 @@ export default function EditDoorman( { history, match } ){
             user: username
         }, { headers: { _id } });
 
-        history.push(`/adm/id/${user}`);
+        history.go(-1)
     }
 
     return (
@@ -46,7 +48,7 @@ export default function EditDoorman( { history, match } ){
                 <input type="text" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Bloco:"/>
                 <div><button type="submit">Salvar</button></div>
             </form>
-            <button type="button" id="voltarEditOwner" onClick={() => history.push(`/adm/id/${user}`) }>voltar</button>
+            <button type="button" id="editdoorman" onClick={() => history.go(-1) }>voltar</button>
         </div>
     )
 }

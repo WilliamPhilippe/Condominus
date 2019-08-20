@@ -38,6 +38,7 @@ routes.get('/getHouseById/:id', HouseController.getById);
 routes.post('/edit/owner', OwnerController.editOwner);
 routes.post('/edit/doorman', DoormanController.editDoorman);
 routes.post('/edit/house', HouseController.editHouse);
+routes.post('/edit/veichle', VeichlesController.editVeichle);
 
 
 
