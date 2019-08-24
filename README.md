@@ -26,5 +26,5 @@ O frontend foi desenvolvido totalmente em *React.js*, usando o React Hooks. O *a
 
 O link do site está aqui: https://condominusfrontend.herokuapp.com
 
-*Por ser hospedado no Heroku, um servidor gratuito, no primeiro acesso ele pode demorar alguns minutos para carregar. Atualize o site após o primeiro minuto *
-*O mesmo acontece na primeira solicitação que fizer ao backend, que também é hospedado no heroku. A primeira solicitação é feita no login.*
+*Por ser hospedado no Heroku, um servidor gratuito, no primeiro acesso ele pode demorar alguns minutos para carregar. Atualize o* *site após o primeiro minuto*
+*O mesmo acontece na primeira solicitação que fizer ao backend, que também é hospedado no heroku. A primeira solicitação é feita no* *login.*
