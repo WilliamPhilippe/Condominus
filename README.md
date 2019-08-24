@@ -22,7 +22,7 @@ O frontend foi desenvolvido totalmente em *React.js*, usando o React Hooks. O *a
 * Cadastrar, editar e verificar se são ou não autorizados os veículos.
 * Listar casas à venda.
 
-O link do site está aqui: [condominus][https://condominusfrontend.herokuapp.com]
+O link do site está aqui: https://condominusfrontend.herokuapp.com
 
 *Por ser hospedado no Heroku, um servidor gratuito, no primeiro acesso ele pode demorar alguns minutos para carregar. Atualize o site após o primeiro minuto *
 *O mesmo acontece na primeira solicitação que fizer ao backend, que também é hospedado no heroku. A primeira solicitação é feita no login.*
